@@ -14,20 +14,19 @@ function getComputerChoice() {
     }
 }
 
-// Put both choices into the playRound function which will determine who wins the round.
-// Loop the playRound function 5 times inside of the playGame function, logging the score after each round.
-
 let computerScore = 0;
 let humanScore = 0;
+
+// Creates variables for result, hScore and cScore which will be appended to the page as a child of resultCont
 
 let resultCont = document.querySelector(".div-cont")
 let result = document.createElement("p");
 let hScore = document.createElement("p");
 let cScore = document.createElement("p");
 
-resultCont.appendChild(result);
 resultCont.appendChild(hScore);
 resultCont.appendChild(cScore);
+resultCont.appendChild(result);
 
 function playRound(computerChoice, humanChoice) {
 
@@ -59,8 +58,12 @@ function playRound(computerChoice, humanChoice) {
             result.textContent = "It's a tie!"; 
     }
 
+    // Updates score counter on the page after each round.
+
     hScore.textContent = `Human Score: ${humanScore}`;
     cScore.textContent = `Computer Score: ${computerScore}`;
+
+    // Presents winner page once either side has reached 5.
 
     if (humanScore === 5 || computerScore === 5) {
         const reset = document.createElement("button");
@@ -74,9 +77,13 @@ function playRound(computerChoice, humanChoice) {
     
     resultCont.appendChild(reset);
 
+    // Disables buttons after reset button is presented.
+
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
+
+    // Resets scores back to 0 if the play again button is clicked.
 
     reset.addEventListener("click", () => {
         humanScore = 0;
@@ -87,11 +94,16 @@ function playRound(computerChoice, humanChoice) {
         reset.remove();
         });
 
-        rock.disabled = false;
-        paper.disabled = false;
-        scissors.disabled = false;
+    // Re-enables buttons after 'play again' is clicked.
+
+    rock.disabled = false;
+    paper.disabled = false;
+    scissors.disabled = false;
     }
 }
+
+// Event listeners for rock, paper or scissors. 
+// Only allows the game to be played if either score is below 5.
 
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
