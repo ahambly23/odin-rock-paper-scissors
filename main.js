@@ -20,9 +20,11 @@ let humanScore = 0;
 // Creates variables for result, hScore and cScore which will be appended to the page as a child of resultCont
 
 let resultCont = document.querySelector(".div-cont")
+let resetCont = document.querySelector(".reset")
 let result = document.createElement("p");
 let hScore = document.createElement("p");
 let cScore = document.createElement("p");
+resultCont.style.display = "none";
 
 resultCont.appendChild(hScore);
 resultCont.appendChild(cScore);
@@ -67,6 +69,7 @@ function playRound(computerChoice, humanChoice) {
 
     if (humanScore === 5 || computerScore === 5) {
         const reset = document.createElement("button");
+        reset.setAttribute("id", "play-again");
         if (humanScore === 5) {
             result.textContent = "You win!";
             reset.textContent = "Play again";
@@ -74,8 +77,9 @@ function playRound(computerChoice, humanChoice) {
             result.textContent = "You lose!";
             reset.textContent = "Play again";
         }
-    
-    resultCont.appendChild(reset);
+
+    resultCont.style.display = "block";
+    resetCont.appendChild(reset);
 
     // Disables buttons after reset button is presented.
 
@@ -110,6 +114,7 @@ const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
 rock.addEventListener("click", () => {
+    resultCont.style.display = "block";
     if (computerScore < 5 && humanScore < 5) {
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "rock");
@@ -117,6 +122,7 @@ rock.addEventListener("click", () => {
 })
 
 paper.addEventListener("click", () => {
+    resultCont.style.display = "block";
     if (computerScore < 5 && humanScore < 5) {
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "paper");
@@ -124,6 +130,7 @@ paper.addEventListener("click", () => {
 })
 
 scissors.addEventListener("click", () => {
+    resultCont.style.display = "block";
     if (computerScore < 5 && humanScore < 5) {
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "scissors");
