@@ -24,11 +24,13 @@ let resetCont = document.querySelector(".reset")
 let result = document.createElement("p");
 let hScore = document.createElement("p");
 let cScore = document.createElement("p");
-resultCont.style.display = "none";
 
 resultCont.appendChild(hScore);
 resultCont.appendChild(cScore);
 resultCont.appendChild(result);
+hScore.innerHTML = `Human Score: <span>${humanScore}</span>`;
+cScore.innerHTML = `Computer Score: <span>${computerScore}</span>`;
+result.textContent = "Choose your hand";
 
 function playRound(computerChoice, humanChoice) {
 
@@ -62,8 +64,8 @@ function playRound(computerChoice, humanChoice) {
 
     // Updates score counter on the page after each round.
 
-    hScore.textContent = `Human Score: ${humanScore}`;
-    cScore.textContent = `Computer Score: ${computerScore}`;
+    hScore.innerHTML = `Human Score: <span>${humanScore}</span>`;
+    cScore.innerHTML = `Computer Score: <span>${computerScore}</span>`;
 
     // Presents winner page once either side has reached 5.
 
@@ -74,11 +76,10 @@ function playRound(computerChoice, humanChoice) {
             result.textContent = "You win!";
             reset.textContent = "Play again";
         } else {
-            result.textContent = "You lose!";
+            result.textContent = "Computer wins!";
             reset.textContent = "Play again";
         }
 
-    resultCont.style.display = "block";
     resetCont.appendChild(reset);
 
     // Disables buttons after reset button is presented.
@@ -94,7 +95,7 @@ function playRound(computerChoice, humanChoice) {
         computerScore = 0;
         hScore.textContent = `Human Score: ${humanScore}`;
         cScore.textContent = `Computer Score: ${computerScore}`;
-        result.textContent = '';
+        result.textContent = "Choose your hand";
         reset.remove();
         });
 
@@ -114,7 +115,6 @@ const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
 rock.addEventListener("click", () => {
-    resultCont.style.display = "block";
     if (computerScore < 5 && humanScore < 5) {
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "rock");
@@ -122,7 +122,6 @@ rock.addEventListener("click", () => {
 })
 
 paper.addEventListener("click", () => {
-    resultCont.style.display = "block";
     if (computerScore < 5 && humanScore < 5) {
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "paper");
@@ -130,7 +129,6 @@ paper.addEventListener("click", () => {
 })
 
 scissors.addEventListener("click", () => {
-    resultCont.style.display = "block";
     if (computerScore < 5 && humanScore < 5) {
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "scissors");
