@@ -126,15 +126,15 @@ rock.addEventListener("click", () => {
         resetTextShadow();
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "rock");
-        if (computerChoice === "rock") {
-            rock.style.textShadow = "6px 6px 3px orange";
-        } else if (computerChoice === "scissors") {
-            rock.style.textShadow = "6px 6px 3px green";
-            scissors.style.textShadow = "6px 6px 3px red";
-        } else if (computerChoice === "paper") {
-            rock.style.textShadow = "6px 6px 3px red";
-            paper.style.textShadow = "6px 6px 3px green";
-        }
+        // if (computerChoice === "rock") {
+        //     rock.style.textShadow = "6px 6px 3px orange";
+        // } else if (computerChoice === "scissors") {
+        //     rock.style.textShadow = "6px 6px 3px green";
+        //     scissors.style.textShadow = "6px 6px 3px red";
+        // } else if (computerChoice === "paper") {
+        //     rock.style.textShadow = "6px 6px 3px red";
+        //     paper.style.textShadow = "6px 6px 3px green";
+        // }
     }
 })
 
@@ -143,15 +143,15 @@ paper.addEventListener("click", () => {
         resetTextShadow();
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "paper");
-        if (computerChoice === "paper") {
-            paper.style.textShadow = "6px 6px 3px orange";
-        } else if (computerChoice === "scissors") {
-            paper.style.textShadow = "6px 6px 3px red";
-            scissors.style.textShadow = "6px 6px 3px green";
-        } else if (computerChoice === "rock") {
-            rock.style.textShadow = "6px 6px 3px red";
-            paper.style.textShadow = "6px 6px 3px green";
-        }
+        // if (computerChoice === "paper") {
+        //     paper.style.textShadow = "6px 6px 3px orange";
+        // } else if (computerChoice === "scissors") {
+        //     paper.style.textShadow = "6px 6px 3px red";
+        //     scissors.style.textShadow = "6px 6px 3px green";
+        // } else if (computerChoice === "rock") {
+        //     rock.style.textShadow = "6px 6px 3px red";
+        //     paper.style.textShadow = "6px 6px 3px green";
+        // }
     }
 })
 
@@ -160,14 +160,14 @@ scissors.addEventListener("click", () => {
         resetTextShadow();
         let computerChoice = getComputerChoice();
         playRound(computerChoice, "scissors");
-        if (computerChoice === "scissors") {
-            scissors.style.textShadow = "6px 6px 3px orange";
-        } else if (computerChoice === "rock") {
-            rock.style.textShadow = "6px 6px 3px green";
-            scissors.style.textShadow = "6px 6px 3px red";
-        } else if (computerChoice === "paper") {
-            scissors.style.textShadow = "6px 6px 3px green";
-            paper.style.textShadow = "6px 6px 3px red";
-        }
+        // if (computerChoice === "scissors") {
+        //     scissors.style.textShadow = "6px 6px 3px orange";
+        // } else if (computerChoice === "rock") {
+        //     rock.style.textShadow = "6px 6px 3px green";
+        //     scissors.style.textShadow = "6px 6px 3px red";
+        // } else if (computerChoice === "paper") {
+        //     scissors.style.textShadow = "6px 6px 3px green";
+        //     paper.style.textShadow = "6px 6px 3px red";
+        // }
     }
 })
